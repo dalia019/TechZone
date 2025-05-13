@@ -1,0 +1,92 @@
+{% extends 'master.html' %}
+{% block title %}Category {{category_name}} - TechZone{% endblock %}
+
+{% block content %}
+
+{% if category_name == "laptops" %}
+    {% include "products/header_filters/laptops.html" %}
+{% elif category_name == "smartphones" %}
+    {% include "products/header_filters/smartphones.html" %}
+{% elif category_name == "accessories" %}
+    {% include "products/header_filters/accessories.html" %}
+{% endif %}
+
+<!-- Products -->
+<div class="col-lg-9">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <span class="text-muted">Showing 1-12 of 84 products</span>
+        </div>
+        <div class="d-flex">
+            <select class="form-select me-2" style="width: auto;">
+                <option selected>Sort by: Featured</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Rating: High to Low</option>
+                <option>Newest Arrivals</option>
+            </select>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-secondary"><i class="fas fa-th"></i></button>
+                <button type="button" class="btn btn-outline-secondary active"><i class="fas fa-list"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+
+        {% for product in products %}
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="overflow-hidden bg-light d-flex align-items-center justify-content-center"
+                    style="height: 200px;">
+                    <img src="{{ product.product_image.url }}" alt="{{ product.product_name }}" class="img-fluid"
+                        style="max-height: 80%;">
+                </div>
+                <div class="card-body">
+                    <h3 class="h5">{{ product.product_name }}</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="fw-bold"> {{ product.product_price }} </div>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-primary">Details</a>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+
+</div>
+</div>
+</section>
+{% endblock content %}

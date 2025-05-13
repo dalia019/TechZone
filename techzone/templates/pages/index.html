@@ -1,0 +1,206 @@
+{%extends 'master.html'%}
+{% load static %}
+{% block title %}Home - TechZone{% endblock title %}
+{%block content%}
+<!-- Hero Section -->
+<section class="bg-primary bg-gradient text-white py-5 mb-5">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-4">Latest Gadgets & Tech Products</h1>
+        <p class="lead mb-5">Discover the most innovative technology products at unbeatable prices. Free shipping on
+            all orders over $99.</p>
+        <a href="{% url 'shop' %}" class="btn btn-light btn-lg px-5">Shop Now</a>
+    </div>
+</section>
+
+<!-- Featured Categories -->
+<section class="container mb-5 ">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Shop by Category</h2>
+        <p class="text-muted">Browse our wide selection of tech categories to find exactly what you're looking for.
+        </p>
+    </div>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+            <div class="card rounded h-100 border-0 shadow hover-effect">
+                <a href="{% url 'category' 'smartphones' %}" class="text-decoration-none">
+                    <div class="overflow-hidden rounded-top bg-light d-flex align-items-center justify-content-center"
+                        style="height: 180px;">
+                        <img src="{% static 'imgs/Smartphones.jpg' %}" alt="Smartphones" class="img-fluid"
+                            style="height: 100%;">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="h5 text-dark">Smartphones</h3>
+                        <p class="text-muted small">Latest models from top brands</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card rounded h-100 border-0 shadow hover-effect">
+                <a href="{% url 'category' 'laptops' %}" class="text-decoration-none">
+                    <div class="overflow-hidden rounded-top bg-light d-flex align-items-center justify-content-center"
+                        style="height: 180px;">
+                        <img src="{% static 'imgs/Laptops.jpg' %}" alt="Laptops" class="img-fluid"
+                            style="height: 100%;">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="h5 text-dark">Laptops</h3>
+                        <p class="text-muted small">Powerful machines for work & play</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card rounded h-100 border-0 shadow  hover-effect">
+                <a href="{% url 'category' 'accessories' %}" class="text-decoration-none">
+                    <div class="overflow-hidden rounded-top bg-light d-flex align-items-center justify-content-center"
+                        style="height: 180px;">
+                        <img src="{% static 'imgs/accessories.jpg' %}" alt="Accessories" class="img-fluid"
+                            style="height: 100%;width: 100%;">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="h5 text-dark">Accessories</h3>
+                        <p class="text-muted small">Enhance your devices</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section class="container mb-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Featured Products</h2>
+        <p class="text-muted">Check out our most popular products this week</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="overflow-hidden bg-light d-flex align-items-center justify-content-center position-relative"
+                    style="height: 200px;">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+                    <img src="https://www.apple.com/v/iphone-14-pro/c/images/overview/hero/hero_endframe__dtzvajyextq6_large.jpg"
+                        alt="iPhone 13" class="img-fluid" style="max-height: 80%;">
+                </div>
+                <div class="card-body">
+                    <h3 class="h5">iPhone 14 Pro Max</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <span class="text-decoration-line-through text-muted me-2">$1,099</span>
+                            <span class="fw-bold">$999</span>
+                        </div>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a href="product-detail.html" class="btn btn-outline-primary">Details</a>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="overflow-hidden bg-light d-flex align-items-center justify-content-center"
+                    style="height: 200px;">
+                    <img src="https://www.apple.com/v/macbook-pro-14-and-16/b/images/overview/hero/hero_intro_endframe__e6khcva4hkeq_large.jpg"
+                        alt="MacBook Pro" class="img-fluid" style="max-height: 80%;">
+                </div>
+                <div class="card-body">
+                    <h3 class="h5">MacBook Pro 14"</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="fw-bold">$1,999</div>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a href="product-detail.html" class="btn btn-outline-primary">Details</a>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="overflow-hidden bg-light d-flex align-items-center justify-content-center position-relative"
+                    style="height: 200px;">
+                    <span class="badge bg-success position-absolute top-0 start-0 m-2">New</span>
+                    <img src="https://www.apple.com/v/airpods-pro/c/images/overview/hero__gnfk5g59t0qe_large.jpg"
+                        alt="AirPods Pro" class="img-fluid" style="max-height: 80%;">
+                </div>
+                <div class="card-body">
+                    <h3 class="h5">AirPods Pro 2</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="fw-bold">$249</div>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a href="product-detail.html" class="btn btn-outline-primary">Details</a>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="overflow-hidden bg-light d-flex align-items-center justify-content-center"
+                    style="height: 200px;">
+                    <img src="https://www.apple.com/v/apple-watch-series-8/c/images/overview/hero/hero__d2s5fy7kkpyq_large.jpg"
+                        alt="Apple Watch" class="img-fluid" style="max-height: 80%;">
+                </div>
+                <div class="card-body">
+                    <h3 class="h5">Apple Watch Series 8</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="fw-bold">$399</div>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a href="product-detail.html" class="btn btn-outline-primary">Details</a>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="bg-dark text-white py-5 mb-5">
+    <div class="container text-center py-4">
+        <h2 class="fw-bold mb-4">Subscribe to Our Newsletter</h2>
+        <p class="lead text-light mb-5">Get the latest updates on new products and upcoming sales</p>
+        <form class="row g-3 justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="input-group">
+                    <input type="email" class="form-control form-control-lg" placeholder="Your email address">
+                    <button class="btn btn-primary btn-lg px-4" type="submit">Subscribe</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{%endblock content%}
