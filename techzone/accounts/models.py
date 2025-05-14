@@ -8,3 +8,10 @@ class Admin(models.Model):
 
     def __str__(self):
         return self.user.username
+class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    address = models.CharField(max_length=255)
+    phone = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.user.username
