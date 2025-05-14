@@ -1,0 +1,12 @@
+<h3 class="mt-5">Meet Our Admins</h3>
+<div class="row">
+    {% for admin in admins %}
+    <div class="col-md-3 text-center mb-4">
+        <div class="card p-2 shadow rounded">
+            <img src="{{ admin.profile_picture.url }}" class="rounded-circle mb-2" width="100" height="100" alt="{{ admin.user.username }}">
+            <h5>{{ admin.user.first_name }} {{ admin.user.last_name }}</h5>
+            <p class="text-muted">{{ admin.position }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
